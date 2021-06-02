@@ -19,5 +19,7 @@ from detection import views
 urlpatterns = [
     url('^$', views.index, name='index.html'),
     url('index', views.index, name='index.html'),
-    url('detect', views.detect_view, name='detect_view')
+    # url('detect', views.detect_view, name='detect_view'),
+    # url('camera', views.camera_view, name='camera_view'),
+    url('live', views.livefe, name='livefe')
 ]
