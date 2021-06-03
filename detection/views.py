@@ -115,7 +115,10 @@ def predict(video):
 
 class VideoCamera(object):
     def __init__(self):
-        self.video = cv2.VideoCapture(0)
+        self.video = cv2.VideoCapture(1)
+
+        camera_backends = cv2.videoio_registry.getCameraBackends()
+        print("ca",camera_backends)
         (self.grabbed, self.frame) = self.video.read()
         threading.Thread(target=self.update, args=()).start()
 
