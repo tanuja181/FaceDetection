@@ -115,7 +115,7 @@ def predict(video):
 
 class VideoCamera(object):
     def __init__(self):
-        self.video = cv2.VideoCapture(1)
+        self.video = cv2.VideoCapture(0, cv2.CAP_V4L)
 
         camera_backends = cv2.videoio_registry.getCameraBackends()
         print("ca",camera_backends)
@@ -133,7 +133,6 @@ class VideoCamera(object):
     def update(self):
         while True:
             (self.grabbed, self.frame) = self.video.read()
-
 
 
 
